@@ -60,12 +60,14 @@ file_out = "C:/{}/Mozilla Thunderbird/omni2.ja".format(path_2)
 
 with open(file_in, 'rb') as f:
     data = f.read()
+    f.close()
 
 data = data.replace(b'imapSubscribePrompt', b'imapSubscribePromtt')
 
 
 with open(file_out, 'wb') as f:
     f.write(data)
+    f.close()
 
 # usunięcie pliku
 os.remove("C:\{}\Mozilla Thunderbird\omni.ja".format(path_1))
